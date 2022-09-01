@@ -14,10 +14,12 @@ class CategoryController extends Controller
     {
         return view('admin.category.index');
     }
+
     public function create()
     {
         return view('admin.category.create');
     }
+
     public function store(CategoryFormRequest $request)
     {
         $validatedData = $request->validated();
@@ -46,5 +48,12 @@ class CategoryController extends Controller
         $category->save();
 
         return redirect('admin/category')->with('message', 'Category Added Successfully');
+    }
+
+    public function edit()
+    {
+    }
+    public function delete()
+    {
     }
 }
